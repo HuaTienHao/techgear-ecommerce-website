@@ -1,0 +1,11 @@
+{
+  "files": {
+    "main.js": "/techgear-ecommerce-website/static/js/main.5829093b.js",
+    "static/media/commerce.png": "/techgear-ecommerce-website/static/media/commerce.457bea4f142b5443dec4.png",
+    "index.html": "/techgear-ecommerce-website/index.html",
+    "main.5829093b.js.map": "/techgear-ecommerce-website/static/js/main.5829093b.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.5829093b.js"
+  ]
+}
