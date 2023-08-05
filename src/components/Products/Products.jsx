@@ -14,6 +14,12 @@ const Products = ({ products, onAddToCart }) => {
                 <title>TechGear - E-Commerce Website</title>
                 <meta name='description' content='A simple e-commerce website that sell computer components' />
                 <meta name="keywords" content="E-Commerce, ReactJS" />
+
+                <meta property="og:url" content="https://huatienhao.github.io/techgear-ecommerce-website/" />
+                <meta property="og:title" content="TechGear - E-Commerce Website" />
+                <meta property="og:description" content="A simple e-commerce website that sell computer components" />
+                <meta property="og:image" content="https://img.freepik.com/free-vector/tech-banner-illustration-desktop-computer_107791-7920.jpg?w=1380&t=st=1691235666~exp=1691236266~hmac=113a7ceba16f66babed0c3a419ab4314beee1ff778e65fdfcf197fb0c550a6f1" />
+                
             </Helmet>
 
             <div className={classes.toolbar} />
