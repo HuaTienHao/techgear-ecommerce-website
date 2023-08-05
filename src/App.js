@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ReactGA from 'react-ga';
 
-const TRACKING_ID = "G-FREJZFDYDR";
+const TRACKING_ID = "UA-280576953-1";
 ReactGA.initialize(TRACKING_ID);
 
 
