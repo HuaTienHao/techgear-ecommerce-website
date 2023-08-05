@@ -4,10 +4,10 @@ import { commerce } from './lib/commerce'
 import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga4";
 
-const TRACKING_ID = "UA-280576953-1";
-ReactGA.initialize(TRACKING_ID);
+const MEASUREMENT_ID = "G-Y8RC9RVEPR";
+ReactGA.initialize(MEASUREMENT_ID);
 
 
 const App = () => {
