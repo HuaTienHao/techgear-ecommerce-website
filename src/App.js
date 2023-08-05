@@ -86,14 +86,6 @@ const App = () => {
     fetchProducts();
   }, [searchQuery]);
 
-  useEffect(() => {
-    ReactGA.send({ 
-      hitType: "pageview", 
-      page: window.location.pathname + window.location.search, 
-      title: "Test title" });
-  }, []);
-
-
   if (!cart) return "Loading...";
 
   return (
