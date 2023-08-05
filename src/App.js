@@ -109,7 +109,6 @@ const App = () => {
             <meta property="og:url" content="https://huatienhao.github.io/techgear-ecommerce-website/" />
             <meta property="og:title" content="TechGear - E-Commerce Website" />
             <meta property="og:description" content="A simple e-commerce website that sell computer components" />
-            <meta property="og:image" content="./assets/commerce.png" />
             
         </Helmet>
 
