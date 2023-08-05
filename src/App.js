@@ -87,7 +87,10 @@ const App = () => {
   }, [searchQuery]);
 
   useEffect(() => {
-    ReactGA.pageview(window.location.pathname + window.location.search);
+    ReactGA.send({ 
+      hitType: "pageview", 
+      page: window.location.pathname + window.location.search, 
+      title: "Test title" });
   }, []);
 
 
