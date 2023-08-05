@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/techgear-ecommerce-website/static/js/main.2db9f9dd.js",
+    "main.js": "/techgear-ecommerce-website/static/js/main.bb7943e1.js",
     "static/media/commerce.png": "/techgear-ecommerce-website/static/media/commerce.457bea4f142b5443dec4.png",
     "index.html": "/techgear-ecommerce-website/index.html",
-    "main.2db9f9dd.js.map": "/techgear-ecommerce-website/static/js/main.2db9f9dd.js.map"
+    "main.bb7943e1.js.map": "/techgear-ecommerce-website/static/js/main.bb7943e1.js.map"
   },
   "entrypoints": [
-    "static/js/main.2db9f9dd.js"
+    "static/js/main.bb7943e1.js"
   ]
 }
