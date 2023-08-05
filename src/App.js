@@ -4,6 +4,10 @@ import { commerce } from './lib/commerce'
 import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import ReactGA from 'react-ga';
+
+const TRACKING_ID = "G-FREJZFDYDR";
+ReactGA.initialize(TRACKING_ID);
 
 
 const App = () => {
@@ -81,6 +85,10 @@ const App = () => {
     };
     fetchProducts();
   }, [searchQuery]);
+
+  useEffect(() => {
+    ReactGA.pageview(window.location.pathname + window.location.search);
+  }, []);
 
 
   if (!cart) return "Loading...";
