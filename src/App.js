@@ -25,11 +25,22 @@ const App = () => {
   const handleSearchChange = (value) => {
     setSearchQuery(value);
   };
+
+  const trackAddToCart = (productName, quantity) => {
+    ReactGA.event({
+      category: "Ecommerce",
+      action: "Add to cart",
+      label: productName,
+      value: quantity,
+    });
+  };
   
-  const handleAddToCart = async (productId, quantity) => {
+  const handleAddToCart = async (productId, quantity, productName) => {
     const data = await commerce.cart.add(productId, quantity);
 
     setCart(data);
+
+    trackAddToCart(productName, quantity);
   };
 
   const handleUpdateCartQty = async (productId, quantity) => {
