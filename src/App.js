@@ -17,6 +17,39 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
   
+  const trackAddToCart = (productName, quantity) => {
+    ReactGA.event({
+      category: "Ecommerce",
+      action: "Add to Cart",
+      label: productName,
+      value: quantity,
+    });
+  };
+
+  const trackUpdateCartQty = (productName, quantity) => {
+    ReactGA.event({
+      category: "Ecommerce",
+      action: "Update Cart",
+      label: productName,
+      value: quantity,
+    });
+  };
+
+  const trackRemoveFromCart = (productName) => {
+    ReactGA.event({
+      category: "Ecommerce",
+      action: "Remove from Cart",
+      label: productName,
+    });
+  };
+
+  const trackEmptyCart = () => {
+    ReactGA.event({
+      category: "Ecommerce",
+      action: "Empty Cart",
+    });
+  };
+
   const fetchCart = async () => {
     const data = await commerce.cart.retrieve();
     setCart(data);
@@ -24,15 +57,6 @@ const App = () => {
   
   const handleSearchChange = (value) => {
     setSearchQuery(value);
-  };
-
-  const trackAddToCart = (productName, quantity) => {
-    ReactGA.event({
-      category: "Ecommerce",
-      action: "Add to cart",
-      label: productName,
-      value: quantity,
-    });
   };
   
   const handleAddToCart = async (productId, quantity, productName) => {
@@ -43,22 +67,28 @@ const App = () => {
     trackAddToCart(productName, quantity);
   };
 
-  const handleUpdateCartQty = async (productId, quantity) => {
+  const handleUpdateCartQty = async (productId, quantity, productName) => {
     const data = await commerce.cart.update(productId, { quantity });
 
     setCart(data);
+
+    trackUpdateCartQty(productName, quantity);
   };
 
-  const handleRemoveFromCart = async (productId) => {
+  const handleRemoveFromCart = async (productId, productName) => {
     const data = await commerce.cart.remove(productId);
 
     setCart(data);
+
+    trackRemoveFromCart(productName);
   };
 
   const handleEmptyCart = async () => {
     const data = await commerce.cart.empty();
 
     setCart(data);
+
+    trackEmptyCart();
   };
 
   const refreshCart = async () => {
