@@ -6,9 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ReactGA from "react-ga4";
 
-const MEASUREMENT_ID = "G-Y8RC9RVEPR";
-ReactGA.initialize(MEASUREMENT_ID);
-
+ReactGA.initialize(process.env.MEASUREMENT_ID);
 
 const App = () => {
   const [products, setProducts] = useState([]);
