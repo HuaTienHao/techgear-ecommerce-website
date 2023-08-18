@@ -5,6 +5,7 @@ import { Products, Navbar, Cart, Checkout } from './components';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ReactGA from "react-ga4";
+import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
 
 const MEASUREMENT_ID = "G-Y8RC9RVEPR"
 ReactGA.initialize(MEASUREMENT_ID);
@@ -131,6 +132,9 @@ const App = () => {
   return (
     <Router>
       <div>
+        <TawkMessengerReact
+          propertyId="64def08dcc26a871b02fef25"
+          widgetId="1h83dnakh"/>
         <Navbar totalItems={cart.total_items} handleSearchChange={handleSearchChange} />
 
         <Helmet>
