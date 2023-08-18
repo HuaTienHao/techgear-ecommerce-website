@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { commerce } from './lib/commerce'
 import { Products, Navbar, Cart, Checkout } from './components';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 import ReactGA from "react-ga4";
 import TawkMessengerReact from '@tawk.to/tawk-messenger-react';
@@ -11,6 +12,8 @@ const MEASUREMENT_ID = "G-Y8RC9RVEPR"
 ReactGA.initialize(MEASUREMENT_ID);
 
 const App = () => {
+  const location = useLocation();
+
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState({});
   const [order, setOrder] = useState({});
@@ -129,15 +132,16 @@ const App = () => {
 
   if (!cart) return "Loading...";
 
-  const location = useLocation();
-
   return (
     <Router>
       <div>
         {location.pathname === '/' && (
-          <TawkMessengerReact
-          propertyId="64def08dcc26a871b02fef25"
-          widgetId="1h83dnakh"/>
+          <>
+            <TawkMessengerReact
+              propertyId="64def08dcc26a871b02fef25"
+              widgetId="1h83dnakh"/>
+          </>
+          
         )}
         
         <Navbar totalItems={cart.total_items} handleSearchChange={handleSearchChange} />
